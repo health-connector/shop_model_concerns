@@ -16,7 +16,11 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.2.9"
-
-  s.add_development_dependency "sqlite3"
+  s.add_dependency "rails", "~> 4.2.3"
+  s.add_dependency 'mongo', '2.1.2'
+  s.add_dependency 'mongoid', '5.0.1'
+  s.add_dependency 'mongoid_userstamp'
+  s.add_dependency "mongoid-autoinc"
+  s.add_dependency 'money-rails', '~> 1.3.0'
+  s.add_dependency "mongoid-enum"
 end
