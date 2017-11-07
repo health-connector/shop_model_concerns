@@ -1,5 +1,6 @@
 gem 'shop_model_concerns', path:  File.expand_path("../../../..", __FILE__)
 gem 'acapi', git: "https://github.com/dchbx/acapi.git", branch: 'development'
+gem "config", '~> 1.0.0'
 
 group :test do
   gem 'rspec-rails'
