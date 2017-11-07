@@ -1,6 +1,4 @@
 require "shop_model_concerns/engine"
-require 'factory_bot_rails'
-require 'factories'
 
 module ShopModelConcerns
   class << self
@@ -17,6 +15,9 @@ module ShopModelConcerns
 
   def self.configure
     yield(configuration)
+    require 'factory_bot_rails'
+    require 'money'
+    require 'factories'
   end
 
   class Configuration
