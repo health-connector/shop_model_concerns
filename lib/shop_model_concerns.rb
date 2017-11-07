@@ -20,10 +20,6 @@ module ShopModelConcerns
   end
 
   class Configuration
-    attr_accessor :settings
-
-    def initialize
-      @settings = {}
-    end
+    attr_accessor :settings, :timekeeper
   end
 end
