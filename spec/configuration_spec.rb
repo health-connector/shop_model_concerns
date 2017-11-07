@@ -7,10 +7,4 @@ RSpec.describe ShopModelConcerns::Configuration do
     end
   end
 
-  describe "#timekeeper" do
-    it "returns a TimeKeeper object" do
-      TimeKeeper.date_of_record
-      expect(ShopModelConcerns.configuration.timekeeper.date_of_record).to be_kind_of(Date)
-    end
-  end
 end

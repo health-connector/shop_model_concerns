@@ -21,6 +21,6 @@ module ShopModelConcerns
   end
 
   class Configuration
-    attr_accessor :settings, :timekeeper
+    attr_accessor :settings
   end
 end

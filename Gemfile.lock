@@ -22,6 +22,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.8.0)
     action_mailer_cache_delivery (0.3.7)
       actionmailer (>= 3.0)
     actionmailer (4.2.10)
@@ -270,6 +271,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm (~> 4.8.0)
   acapi!
   action_mailer_cache_delivery (~> 0.3.7)
   capybara (= 2.6.2)

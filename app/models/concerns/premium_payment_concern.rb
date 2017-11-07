@@ -4,6 +4,9 @@ module PremiumPaymentConcern
   extend ActiveSupport::Concern
 
   included do
+    include Mongoid::Document
+    include Mongoid::Timestamps
+    
     embedded_in :employer_profile_account
 
     MethodKinds = %w(ach credit_card check)

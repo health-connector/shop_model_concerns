@@ -4,6 +4,8 @@ module SicCodeConcern
   extend ActiveSupport::Concern
 
   included do
+    include Mongoid::Document
+    
     field :division_code, type: String
     field :division_label, type: String
     field :major_group_code, type: String
