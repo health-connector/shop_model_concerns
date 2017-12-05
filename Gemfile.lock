@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/health-connector/core_model_concerns
-  revision: b65186348c2efca9b522a854e6989f8e2fdcf29f
+  revision: c4bdfbdfb1b536ab2a8dc4fb138fba070907aa19
   specs:
     core_model_concerns (0.0.1)
       money-rails (~> 1.3.0)

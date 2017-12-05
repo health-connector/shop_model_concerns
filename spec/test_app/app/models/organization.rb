@@ -1,3 +1,3 @@
 class Organization
-  include OrganizationConcern
+  include CoreModelConcerns::OrganizationConcern
 end
