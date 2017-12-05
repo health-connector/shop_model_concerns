@@ -1,4 +1,5 @@
 gem 'shop_model_concerns', path:  File.expand_path("../../../..", __FILE__)
+gem 'core_model_concerns', path: "~/Work/mass/core_model_concerns"
 gem 'acapi', git: "https://github.com/dchbx/acapi.git", branch: 'development'
 gem "config", '~> 1.0.0'
 gem 'aasm', '~> 4.8.0'

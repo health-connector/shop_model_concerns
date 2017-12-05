@@ -13,3 +13,4 @@ source 'https://rubygems.org'
 # gem 'byebug', group: [:development, :test]
 
 eval_gemfile File.join(File.dirname(__FILE__), "spec/test_app/Gemfile")
+gem 'mongoid-versioning'

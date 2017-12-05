@@ -17,7 +17,7 @@ module ShopModelConcerns
     yield(configuration)
     require 'factory_bot_rails'
     require 'money'
-    require 'factories'
+    require 'shop_factories'
   end
 
   class Configuration
