@@ -1,12 +1,10 @@
 require 'active_support/concern'
 
-module BenefitGroupConcern
+module BrokerAgencyAccountShopConcern
   extend ActiveSupport::Concern
 
   included do
-    include SharedBenefitGroupConcern
-
-    embedded_in :plan_year
+    embedded_in :employer_profile
   end
 
   class_methods do

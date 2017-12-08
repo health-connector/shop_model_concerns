@@ -60,6 +60,14 @@ module EmployerProfileConcern
     scope :all_with_next_month_effective_date,  ->{ Organization.all_employers_by_plan_year_start_on(TimeKeeper.date_of_record.end_of_month + 1.day) }
 
     alias_method :is_active?, :is_active
+
+    class << self
+      def find_by_broker_agency_profile(broker_agency_profile)
+        raise ArgumentError.new("expected BrokerAgencyProfile") unless broker_agency_profile.is_a?(BrokerAgencyProfile)
+        orgs = Organization.by_broker_agency_profile(broker_agency_profile.id)
+        orgs.collect(&:employer_profile)
+      end
+    end
   end
 
   class_methods do
@@ -93,6 +101,6 @@ module EmployerProfileConcern
         end
       end
     end
-    
+
   end
 end

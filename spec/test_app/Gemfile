@@ -1,6 +1,11 @@
 gem 'shop_model_concerns', path:  File.expand_path("../../../..", __FILE__)
-#gem 'core_model_concerns', path: "~/Work/mass/core_model_concerns"
-gem 'core_model_concerns', git: 'https://github.com/health-connector/core_model_concerns'
+# gem 'core_model_concerns', git: 'https://github.com/health-connector/core_model_concerns'
+# gem 'broker_model_concerns', git: 'https://github.com/health-connector/broker_model_concerns'
+# gem 'plan_model_concerns', git: 'https://github.com/health-connector/plan_model_concerns'
+
+gem 'core_model_concerns', path: "~/Work/mass/core_model_concerns"
+gem 'broker_model_concerns', path: "~/Work/mass/broker_model_concerns"
+gem 'plan_model_concerns', path: "~/Work/mass/plan_model_concerns"
 
 gem 'acapi', git: "https://github.com/dchbx/acapi.git", branch: 'development'
 gem "config", '~> 1.0.0'

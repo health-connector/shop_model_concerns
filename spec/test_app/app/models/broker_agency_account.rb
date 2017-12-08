@@ -1,0 +1,4 @@
+class BrokerAgencyAccount
+  include BrokerModelConcerns::BrokerAgencyAccountConcern
+  include BrokerAgencyAccountShopConcern
+end
