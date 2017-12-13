@@ -5,9 +5,12 @@ module CensusEmployeeConcern
 
   included do |base|
     include AASM
+    include Behaviors::CensusDependentBehaviors
 
     base::NEWLY_DESIGNATED_STATES = NEWLY_DESIGNATED_STATES
-    
+
+    embeds_many :workflow_state_transitions, as: :transitional
+
     field :is_business_owner, type: Boolean, default: false
     field :hired_on, type: Date
     field :employment_terminated_on, type: Date
@@ -23,7 +26,6 @@ module CensusEmployeeConcern
 
     field :cobra_begin_date, type: Date
 
-    embeds_many :workflow_state_transitions, as: :transitional
 
     validates_presence_of :employer_profile_id, :ssn, :dob, :hired_on, :is_business_owner
     validates :expected_selection,
@@ -61,15 +63,6 @@ module CensusEmployeeConcern
     scope :by_employer_profile_id,          ->(employer_profile_id) { where(employer_profile_id: employer_profile_id) }
     scope :non_business_owner,              ->{ where(is_business_owner: false) }
 
-    def initialize(*args)
-      super(*args)
-      write_attribute(:employee_relationship, "self")
-    end
-
-    def employee_relationship
-      "employee"
-    end
-
     def is_linked?
       LINKED_STATES.include?(aasm_state)
     end
@@ -88,6 +81,7 @@ module CensusEmployeeConcern
       return @employer_profile if defined? @employer_profile
       @employer_profile = EmployerProfile.find(self.employer_profile_id) unless self.employer_profile_id.blank?
     end
+
     aasm do
       state :eligible, initial: true
       state :cobra_eligible
