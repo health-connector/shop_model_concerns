@@ -186,6 +186,12 @@ module EmployerProfileConcern
         orgs.collect(&:employer_profile)
       end
     end
+
+    private
+
+    def build_nested_models
+      build_inbox if inbox.nil?
+    end
   end
 
   class_methods do
