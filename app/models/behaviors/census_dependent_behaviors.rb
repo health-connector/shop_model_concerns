@@ -33,8 +33,10 @@ module Behaviors
     end
 
     class_methods do
-      def dependent_class
-        'CensusDependent'
+      unless self.respond_to?(:dependent_class)
+        def dependent_class
+          'CensusDependent'
+        end
       end
     end
   end

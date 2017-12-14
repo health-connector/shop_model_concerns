@@ -12,5 +12,16 @@ FactoryBot.define do
     association :address, strategy: :build
     association :email, strategy: :build
     association :employer_profile, strategy: :build
+
+    transient do
+      create_with_spouse false
+    end
+
+    after(:create) do |census_employee, evaluator|
+      census_employee.created_at = TimeKeeper.date_of_record
+      if evaluator.create_with_spouse
+        census_employee.census_dependents << create(:census_member, employee_relationship: 'spouse')
+      end
+    end
   end
 end
